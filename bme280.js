@@ -91,7 +91,7 @@ const CONFIG = {
 const delay = milliseconds =>
   new Promise(resolve => setTimeout(resolve, milliseconds + 1));
 
-const open = (options, i2c_address) => {
+const open = (i2c_address) => {
   return Promise.resolve().then(_ => {
     options = options || {};
 
