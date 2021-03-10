@@ -25,11 +25,12 @@ Supports Node.js versions 8, 10, 12, 13 and 14.
  * Filtering
  * Standby period
  * Promise based asynchronous API
+ * Controll more than one sensor from same bus
 
 ## Installation
 
 ```
-npm install bme280
+npm install bme280sensor
 ```
 
 ## Usage
@@ -38,11 +39,11 @@ npm install bme280
 
 ![](doc/bme280-pi.png)
 
-#### Report the Humidity, Pressure and Temperature
+#### Report the Humidity, Pressure and Temperature make sure you pass the right i2c address for your sensor 0x77
 ```js
 const bme280 = require('bme280');
 
-bme280.open().then(async sensor => {
+bme280.open({i2cAddress: 0c77}).then(async sensor => {
   console.log(await sensor.read());
   await sensor.close();
 }).catch(console.log);
