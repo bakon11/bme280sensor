@@ -91,14 +91,13 @@ const CONFIG = {
 const delay = milliseconds =>
   new Promise(resolve => setTimeout(resolve, milliseconds + 1));
 
-const open = (i2c_address) => {
-  let options;
+const open = options => {
   return Promise.resolve().then(_ => {
     options = options || {};
     validateOpenOptions(options);
     options = Object.assign({
       i2cBusNumber: DEFAULT_I2C_BUS,
-      i2cAddress: i2c_address,
+      i2cAddress: DEFAULT_I2C_ADDRESS,
       humidityOversampling: OVERSAMPLE.X1,
       pressureOversampling: OVERSAMPLE.X1,
       temperatureOversampling: OVERSAMPLE.X1,
