@@ -92,6 +92,7 @@ const delay = milliseconds =>
   new Promise(resolve => setTimeout(resolve, milliseconds + 1));
 
 const open = (i2c_address) => {
+  let options;
   return Promise.resolve().then(_ => {
     options = options || {};
 
