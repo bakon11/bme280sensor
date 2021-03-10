@@ -95,9 +95,7 @@ const open = (i2c_address) => {
   let options;
   return Promise.resolve().then(_ => {
     options = options || {};
-
     validateOpenOptions(options);
-
     options = Object.assign({
       i2cBusNumber: DEFAULT_I2C_BUS,
       i2cAddress: i2c_address,
